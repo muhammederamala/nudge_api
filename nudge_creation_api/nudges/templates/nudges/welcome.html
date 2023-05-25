@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Welcome</h1>
+<a href="{% url 'add_event_view' %}">
+	<button>Create Event</button>
+</a>
+<br>
+<br>
+<br>
+
+
+<a href="{% url 'all_events' %}">
+	<button>View Events</button>
+</a>
+
+{% endblock content %}

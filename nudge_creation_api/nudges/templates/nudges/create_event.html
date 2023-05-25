@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<form method="POST" enctype="multipart/form-data" action="{% url 'add_event' %}">
+  {% csrf_token %}
+  <div>
+    <label for="id_name">Name:</label>
+    <input type="text" id="id_name" name="name" required>
+  </div>
+  <div>
+    <label for="id_image">Image:</label>
+    <input type="file" id="id_image" name="image" accept="image/*">
+  </div>
+  <div>
+    <label for="id_tagline">Tagline:</label>
+    <input type="text" id="id_tagline" name="tagline" required>
+  </div>
+  <div>
+    <label for="id_schedule">Schedule:</label>
+    <input type="datetime-local" id="id_schedule" name="schedule" required>
+  </div>
+  <div>
+    <label for="id_description">Description:</label>
+    <textarea id="id_description" name="description" required></textarea>
+  </div>
+  <div>
+    <label for="id_moderator">Moderator:</label>
+    <input type="text" id="id_moderator" name="moderator" required>
+  </div>
+  <div>
+    <label for="id_category">Category:</label>
+    <input type="text" id="id_category" name="category" required>
+  </div>
+  <div>
+    <label for="id_sub_category">Sub Category:</label>
+    <input type="text" id="id_sub_category" name="sub_category" required>
+  </div>
+  <div>
+    <label for="id_rigor_rank">Rigor Rank:</label>
+    <input type="number" id="id_rigor_rank" name="rigor_rank" required>
+  </div>
+
+  <input type="submit" placeholder="Submit">
+</form>
+
+
+{% endblock content %}
